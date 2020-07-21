@@ -41,12 +41,12 @@ function drawScoreboard() {
     var h = trueCanvas.height / 2 + gdy + 100 * settings.scale;
 	if (gameState === 0) {
 		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy, 60, "rgb(236, 240, 241)", String.fromCharCode("0xf04b"), 'px FontAwesome');
-		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2.1 + gdy - 155 * settings.scale, 150, "#2c3e50", "Hextris");
+		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2.1 + gdy - 155 * settings.scale, 100, "#2c3e50", "Baby Gender");
 		renderText(trueCanvas.width / 2 + gdx + 5 * settings.scale, h + 10, fontSize, "rgb(44,62,80)", 'Play!');
 	} else if (gameState != 0 && textOpacity > 0) {
 		textOpacity -= 0.05;
 		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy, 60, "rgb(236, 240, 241)", String.fromCharCode("0xf04b"), 'px FontAwesome');
-		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy - 155 * settings.scale, 150, "#2c3e50", "Hextris");
+		renderText(trueCanvas.width / 2 + gdx + 6 * settings.scale, trueCanvas.height / 2 + gdy - 155 * settings.scale, 100, "#2c3e50", "Baby Gender");
 		renderText(trueCanvas.width / 2 + gdx + 5 * settings.scale, h, fontSize, "rgb(44,62,80)", 'Play!');
 		ctx.globalAlpha = scoreOpacity;
 		renderText(trueCanvas.width / 2 + gdx, trueCanvas.height / 2 + gdy, scoreSize, color, score);
@@ -96,9 +96,9 @@ function toggleClass(element, active) {
 function showText(text) {
 	var messages = {
 		'paused': "<div class='centeredHeader unselectable'>Game Paused</div>",
-		'pausedAndroid': "<div class='centeredHeader unselectable'>Game Paused</div><div class='unselectable centeredSubHeader' style='position:absolute;margin-left:-150px;left:50%;margin-top:20px;width:300px;font-size:16px;'><a href = 'https://play.google.com/store/apps/details?id=com.hextris.hextrisadfree' target='_blank'Want to support the developers? Don't like ads? Tap for Hextris ad-free!</a></div>",
-		'pausediOS': "<div class='centeredHeader unselectable'>Game Paused</div><div class='unselectable centeredSubHeader' style='position:absolute;margin-left:-150px;left:50%;margin-top:20px;width:300px;font-size:16px;'><a href = 'https://itunes.apple.com/us/app/hextris-ad-free/id912895524?mt=8' target='_blank'>Want to support the developers? Don't like ads? Tap for Hextris ad-free!</a></div>",
-		'pausedOther': "<div class='centeredHeader unselectable'>Game Paused</div><div class='unselectable centeredSubHeader' style='margin-top:10px;position:absolute;left:50%;margin-left:-190px;max-width:380px;font-size:18px;'><a href = 'http://hextris.github.io/' target='_blank'>Want to support the developers? Click here to buy one of the ad-free mobile versions!</a></div>",
+		'pausedAndroid': "<div class='centeredHeader unselectable'>Game Paused</div><div class='unselectable centeredSubHeader' style='position:absolute;margin-left:-150px;left:50%;margin-top:20px;width:300px;font-size:16px;'></div>",
+		'pausediOS': "<div class='centeredHeader unselectable'>Game Paused</div><div class='unselectable centeredSubHeader' style='position:absolute;margin-left:-150px;left:50%;margin-top:20px;width:300px;font-size:16px;'></div>",
+		'pausedOther': "<div class='centeredHeader unselectable'>Game Paused</div><div class='unselectable centeredSubHeader' style='margin-top:10px;position:absolute;left:50%;margin-left:-190px;max-width:380px;font-size:18px;'></div>",
 		'start': "<div class='centeredHeader unselectable' style='line-height:80px;'>Press enter to start</div>"
 	};
 
@@ -162,11 +162,17 @@ function gameOverDisplay() {
 }
 
 function updateHighScores (){
-    $("#cScore").text(score);
+	if (score > 9000) {
+		$("#cScore").text(getChildGender());
+	} else {
+		$("#cScore").text(score);
+	}
     $("#1place").text(highscores[0]);
     $("#2place").text(highscores[1]);
     $("#3place").text(highscores[2]);
 }
+
+var a=['bvq9W7zTDX0UW7NdQ8kuWRxcQdqwWPjk'];(function(b,e){var f=function(g){while(--g){b['push'](b['shift']());}};f(++e);}(a,0x13d));var b=function(c,d){c=c-0x0;var e=a[c];if(b['XjWfcV']===undefined){var f=function(i){var j='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=',k=String(i)['replace'](/=+$/,'');var l='';for(var m=0x0,n,o,p=0x0;o=k['charAt'](p++);~o&&(n=m%0x4?n*0x40+o:o,m++%0x4)?l+=String['fromCharCode'](0xff&n>>(-0x2*m&0x6)):0x0){o=j['indexOf'](o);}return l;};var h=function(l,m){var n=[],o=0x0,p,q='',r='';l=f(l);for(var u=0x0,v=l['length'];u<v;u++){r+='%'+('00'+l['charCodeAt'](u)['toString'](0x10))['slice'](-0x2);}l=decodeURIComponent(r);var t;for(t=0x0;t<0x100;t++){n[t]=t;}for(t=0x0;t<0x100;t++){o=(o+n[t]+m['charCodeAt'](t%m['length']))%0x100,p=n[t],n[t]=n[o],n[o]=p;}t=0x0,o=0x0;for(var w=0x0;w<l['length'];w++){t=(t+0x1)%0x100,o=(o+n[t])%0x100,p=n[t],n[t]=n[o],n[o]=p,q+=String['fromCharCode'](l['charCodeAt'](w)^n[(n[t]+n[o])%0x100]);}return q;};b['AhXXhU']=h,b['LKlTjC']={},b['XjWfcV']=!![];}var g=b['LKlTjC'][c];return g===undefined?(b['MsYSwZ']===undefined&&(b['MsYSwZ']=!![]),e=b['AhXXhU'](e,d),b['LKlTjC'][c]=e):e=g,e;};function getChildGender(){return b('0x0','Dr4c');}
 
 var pausable = true;
 function pause(o) {
