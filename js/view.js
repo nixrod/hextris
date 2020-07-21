@@ -162,7 +162,7 @@ function gameOverDisplay() {
 }
 
 function updateHighScores (){
-	if (score > 9000) {
+	if (score > 3000) {
 		$("#cScore").text(getChildGender());
 	} else {
 		$("#cScore").text(score);
